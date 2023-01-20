@@ -5,11 +5,11 @@ int[] CreateRandomArray(int length, int minValue, int maxValue)
 {
     int[] array = new int[length];
 
-    var rnd = new Random();  // чтобы не возникало проблем с генерацией, лучше вынести в начало кода,
-                             // дабы у одного и того же объекта брать элементы, а не создавать новый
+    var rnd = new Random();
+                             
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = rnd.Next(minValue, maxValue + 1); //+1 чтобы включить правую границу
+        array[i] = rnd.Next(minValue, maxValue + 1);
     }
 
     return array;
