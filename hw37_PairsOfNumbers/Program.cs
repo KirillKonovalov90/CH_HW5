@@ -24,8 +24,16 @@ int[] ProductOfPairsOfNums(int[] array)
     int[] result;
 
     len = array.Length;
-    result = new int[len / 2];
 
+    if (len % 2 != 0)
+    {
+        result = new int[len / 2 + 1];
+    }
+    else
+    {
+        result = new int[len / 2];
+    }
+    
     for (int i = 0; i < len / 2; i++)
     {
         product = array[i] * array[len - i - 1];
@@ -33,7 +41,7 @@ int[] ProductOfPairsOfNums(int[] array)
     }
     if (len % 2 != 0)
     {
-        Array.Resize(ref result, result.Length +1);
+        //Array.Resize(ref result, result.Length +1); // не стоит менять размер массива
         result[len / 2] = array [len / 2];
     }
 
